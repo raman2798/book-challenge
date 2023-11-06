@@ -18,7 +18,13 @@ const create = async (createBody) => {
 
   const book = await BookModel.create(createBody);
 
-  return book;
+  return  {
+    data: book._doc,
+    page: 1,
+    limit: 1,
+    totalPages: 1,
+    totalResults: 1,
+  };;
 };
 
 /**
